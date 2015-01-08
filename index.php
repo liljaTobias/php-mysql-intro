@@ -35,7 +35,19 @@
             /*** Felhantering ***/
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            /*** Skapa SQL-frågan ***/
+            /*** Skapa SQL-frågan 
+            
+            När det står City.Population referar man till kolumnen Population i table City
+            
+            Då man skriver AS väljer man att döpa om rubriken på kolumnen, tänk excel och en rad med rubriker längst upp.
+            Man kan se i foreach-loopen att jag använder t.ex. city istället för att vara tvungen att skriva City.Name
+            
+            Sen väljer jag att joina table Country då Country.Code = City.CountryCode
+            
+            Till slut visas bara resultat där Country.Population < :antal 
+            :antal hämtas från $_POST['antal']
+            
+            ***/
             $stmt = $dbh->prepare(" SELECT      City.Name AS city, City.Population AS cityPopulation,
                                                 Country.Name AS country, Country.SurfaceArea AS surfaceArea, Country.Population AS countryPopulation,
                                                 CountryLanguage.Language AS language
