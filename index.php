@@ -3,6 +3,32 @@
 <head>
       <meta charset="utf-8">
       <title>Datateknik eller?</title>
+      
+      <style>
+      .btn {
+        -webkit-border-radius: 28;
+        -moz-border-radius: 28;
+        border-radius: 28px;
+        text-shadow: 1px 1px 3px #666666;
+        font-family: Courier New;
+        color: #d424d4;
+        font-size: 40px;
+        background: #dda5e8;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+      }
+
+      .btn:hover {
+        background: #3cb0fd;
+        background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+        background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+        text-decoration: none;
+      }
+      </style>
+      
 </head>
 
 <body>
@@ -11,7 +37,7 @@
             <h2>Här kan du få information om ett land</h2>
             <form action="index.php" method="post">
               Antal invånare i landet är mindre än: <input type="text" name="antal"><br>
-              <input type="submit" value="Sök i databasen">
+              <input class="btn" type="submit" value="Sök i databasen">
         </form>
   </div>
 
